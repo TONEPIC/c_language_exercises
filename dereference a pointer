@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main(void) {
+    int i = 42;
+    int * iAdr; 
+    iAdr = &i; // alternatively int * iAdr = &i;
+    printf("Address of i is %p and i = %d.\n", iAdr, *iAdr);
+    return(0);
+}
