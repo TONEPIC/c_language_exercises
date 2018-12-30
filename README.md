@@ -6,3 +6,4 @@
  C Programming: Language Foundations
  C Programming: Modular Programming and Memory Management
  C Programming: Pointers and Memory Management
+ C Programming: Advanced Data Types
