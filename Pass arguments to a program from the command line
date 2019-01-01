@@ -1,0 +1,15 @@
+/* gcc -std=c11 -Wall -fmax-errors=10 -Wextra program.c -0 program
+
+run: ./program first second third ...
+
+*/
+
+#include <stdio.h>
+
+int main(int argc, char *argv[]){
+	printf("I have %d arguments from command line:\n",argc);
+	for(i=0; i<argc; i++){
+		printf("Argument %d: %s\n", i, argv[i]);
+	}
+	return 0;
+}
