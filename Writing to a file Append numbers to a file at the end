@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main(void){
+
+FILE *ofile;
+char filename[] = "my_output_file.txt";
+int num, selection;
+selection = 1;
+
+ofile=fopen(filename, "r");
+if(ofile != NULL){
+
+	printf(You already have a file named %s\n", filename);
+	fclose(ofile);
+	printf("Do you wish to (1) append or (2) overwrite? Enter:\n");
+	scanf("%d", &selection);
+}
+if(selection == 1){
+
+	ofile = fopen(filename, "a");
+}else{
+
+	ofile = fopen(filename, "w");
+}
+
+do{
+	printf("Please enter a grade. Enter -1 to quit:\n");
+	scanf("%d", num);
+	
+	if(num != -1){
+		fprintf(ofile, "%d", num);
+	}while(num != -1);
+	fclose(ofile);
+
+	return 0;
+}

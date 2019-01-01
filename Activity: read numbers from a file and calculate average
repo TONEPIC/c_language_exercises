@@ -1,0 +1,41 @@
+/* You are teaching a class on C-programming! You would like to find out whether your teaching has been effective, and so you need to compute the average grade your students have received on the most recent assignment. These grades (integers) are stored in the file studentGrades.txt.
+
+The first entry in the file (an integer) is the number of student grades that are stored in the file. For example, if the file was as follows:
+
+9
+56 3 8 11 0 45 55 2 78
+
+this would mean that there are 9 grades stored in the file (starting with 56 and ending with 78).
+
+Your job is to calculate and print out the average of the grades stored in the file. Please print the average grade with two decimal places.*/
+
+#include <stdio.h>
+
+int main(void){
+
+	int N, i;
+	double mark, total, average;
+	total = 0.0;
+	FILE *ifile;
+/* ifile is a variable name - you should use any other name here. However, the '*' is important - we are working with a pointer. We call this a file pointer */
+
+	ifile = fopen("studentGrades.txt", "r"); 
+/* open file for reading. The "r" stands for reading. */
+
+	fscanf(ifile, "%d", &N); 
+/* read first number from the file. Just like scanf(), the only difference is the file pointer that gets passed in as well. */
+
+//	printf("There are %d numbers in the file.\n", N);
+
+	for(i=0; i<N; i++){
+		fscanf(ifile, "%lf", &mark);
+		total = total + mark;
+	}
+	average = total / N;
+	
+	printf("%.2lf\n", average);
+	
+	fclose(ifile); // closes the file
+
+	return 0;
+}
