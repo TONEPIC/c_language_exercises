@@ -1,0 +1,87 @@
+#include <stdio.h>
+
+double foot(double);
+
+double pound(double);
+
+double fahr(double);
+
+int main(void){
+   
+int numbconv;
+   
+int i=0;
+   
+double value=0;
+   
+double conval=0;
+   
+char unit;
+   
+scanf("%d", &numbconv);
+   
+for(i=0; i<numbconv;i++){
+
+       conval=0;
+
+       scanf("%lf %c", &value, &unit);
+
+       if(unit=='m'){
+
+           conval=foot(value);
+
+           printf("%6.6lf ft\n", conval);
+
+       }else if(unit=='g'){
+
+           conval=pound(value);
+
+           printf("%6.6lf lbs\n", conval);
+
+       }else if(unit=='c'){
+
+           conval=fahr(value);
+
+           printf("%6.6lf f\n", conval);
+
+       }
+
+    }
+
+}
+
+double foot(double x){
+
+    double feet;
+
+    double foo = 0.3048;
+
+    feet = x/foo;
+
+    return feet;
+
+}
+
+double pound(double p){
+
+    double pounds;
+
+    double gram = 0.002205;
+
+    pounds = p*gram;
+
+    return pounds;
+
+}
+
+double fahr(double t){
+
+    double fahren;
+
+    //temperature in degrees Fahrenheit = 32 + 1.8 × temperature in degrees Celsius.
+    
+    fahren =32 + (1.8 * t);
+
+    return fahren;
+
+}                   

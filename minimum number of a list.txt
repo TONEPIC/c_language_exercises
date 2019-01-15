@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int min(int x, int y);
+
+int main(void) {
+    int nnum;
+    int i=2;
+    int value1;
+    int value2;
+    int value;
+    int mini;
+    scanf("%d", &nnum);
+    scanf("%d %d", &value1, &value2);
+    mini=min(value1,value2);
+    for (i = 2; i < nnum; i = i + 1) {
+        scanf("%d", &value);
+        mini=min(mini,value);
+    }
+    printf("%d", mini);
+}
+
+int min(int x, int y){
+    if(x<y) return x;
+    else return y;
+}
